@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class Homework6Config(AppConfig):
+class CarsConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "homework_6"
+    name = "cars"
