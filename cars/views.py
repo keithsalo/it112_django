@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from django.http import HttpResponse
 from cars.models import Candy
 from cars.models import Car2
@@ -37,9 +38,23 @@ def car2(request):
         'cars/cars.html', {'car': car})
 
 
-def car_detail(request):
-    detail = Car2.objects.values()
+def car_detail(request, brand):
+    detail = Car2.objects.get(brand=brand)
     return render(request, "cars/car_detail.html", {"detail": detail})
+
+
+# def car_detail(request, brand):
+#     detail = Car2.objects.values()
+#     return render(request, "cars/car_detail.html", {"detail": detail})
+
+
+# def car_detail(request, brand):
+#     try:
+#         # detail = Car2.get_object_or_404(Car2, pk=id)
+#         detail = Car2.objects.filter(name=brand)
+#     except Car2.DoesNotExist:
+#         raise Http404("car does not exist")
+#     return render(request, 'cars/car_detail.html', {'detail': detail})
 
 
 # def candy(request, candy):

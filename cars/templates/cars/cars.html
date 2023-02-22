@@ -10,7 +10,9 @@
     {% for car in car %}
     <h1>
 
-        <a href="{% url 'car_detail' %}">{{ car }}</a>
+
+
+        <a href="/detail/{{ car.brand }}">{{ car }}</a>
 
     </h1>
     {% endfor %}
