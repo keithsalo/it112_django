@@ -26,9 +26,9 @@ from cars.models import Car2
 #         'cars/candy.html', {'candy': candy})
 
 def hello_there(request):
-    username = request.GET.get("user_name", "Stranger")
+    user_name = request.GET.get("user_name", "Stranger")
     return render(
-        request, 'cars/greeting.html', {'username': username, })
+        request, 'cars/greeting.html', {'user_name': user_name, })
 
 
 def car2(request):
