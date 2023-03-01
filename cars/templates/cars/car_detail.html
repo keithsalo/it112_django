@@ -1,18 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
     <title>Car Detail</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cars/site.css' %}" />
+    <link rel="shortcut icon" href="{%  static 'images/favicon.ico' %}">
 </head>
 
 <body>
 
     <ul>
-        <li>{{ detail.brand }}</li>
-        <li>{{ detail.make }}</li>
-        <li>{{ detail.color }}</li>
-        <li>{{ detail.year }}</li>
+        <li>{{ detail.brand|capfirst }}</li>
+        <li id="car_name">{{ detail.make|capfirst }}</li>
+        <li id="car_name">{{ detail.color|capfirst }}</li>
+        <li id="car_name">{{ detail.year }}</li>
 
     </ul>
 
