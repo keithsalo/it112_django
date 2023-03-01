@@ -6,8 +6,8 @@ from cars.models import Car2
 
 class CarAdmin(admin.ModelAdmin):
     list_display = ('brand', 'make', 'year', 'color')
-    list_filter = ('year', 'color')
-    search_fields = ('make', 'year')
+    list_filter = ('make', )
+    search_fields = ('color', 'year')
 
 
 admin.site.register(Car2, CarAdmin, )
